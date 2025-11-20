@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int m, n, x, y;
+    cin >> m >> n;
+    int arr1[m][n];
+
+    for(int i = 0; i < m; i++)
+        for(int j = 0; j < n; j++)
+            cin >> arr1[i][j];
+
+    cin >> x >> y;
+    if (n != x) {
+        cout << "Can't multiply this";
+        return 0;
+    }
+    int arr2[x][y];
+
+    for(int i = 0; i < x; i++)
+        for(int j = 0; j < y; j++)
+            cin >> arr2[i][j];
+
+    int arrMult[m][y];
+    for(int i = 0; i < x; i++) {
+        for(int j = 0; j < y; j++) {
+            int sum = 0;
+            for (int k = 0; k < n; k++) {
+                sum += arr1[i][k] * arr2[k][j];
+            }
+            arrMult[i][j] = sum;
+        }
+    }
+
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < y; j++) {
+            cout << arrMult[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+
+    return 0;
+}
