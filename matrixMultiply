@@ -22,7 +22,7 @@ int main() {
             cin >> arr2[i][j];
 
     int arrMult[m][y];
-    for(int i = 0; i < x; i++) {
+    for(int i = 0; i < m; i++) {
         for(int j = 0; j < y; j++) {
             int sum = 0;
             for (int k = 0; k < n; k++) {
