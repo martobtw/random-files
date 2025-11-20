@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+const int SIZE = 4;
+
+int minMaxElement(int matrix[][SIZE], int n) {
+    for (int i = 0; i < n; i++) {
+        int minRow = matrix[i][0];
+        int maxRow = matrix[i][0];
+        for (int j = 0; j < n; j++) {
+            if (matrix[i][j] > maxRow)
+                maxRow = matrix[i][j];
+            if (matrix[i][j] < minRow)
+                minRow = matrix[i][j];
+        }
+        cout << "Row " << i << " max element is " << maxRow << " and min element is " << minRow << endl;
+    }
+
+    for (int j = 0; j < n; j++) {
+        int minCol = matrix[0][j];
+        int maxCol = matrix[0][j];
+        for (int i = 0; i < n; i++) {
+            if (matrix[i][j] > maxCol)
+                maxCol = matrix[i][j];
+            if (matrix[i][j] < minCol)
+                minCol = matrix[i][j];
+        }
+        cout << "Col " << j << " max element is " << maxCol << " and min element is " << minCol << endl;
+    }
+}
+
+int main() {
+    int n = SIZE;
+    int matrix[SIZE][SIZE] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
+    };
+
+    minMaxElement(matrix, n);
+
+    return 0;
+}
